@@ -1,8 +1,8 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form'
+import { Field, reduxForm } from 'redux-form';
 
-let UserReg = props => {
-  const { handleSubmit } = props
+let UserForm = props => {
+  const { handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={ handleSubmit }>
     <div>
@@ -64,9 +64,11 @@ let UserReg = props => {
   )
 }
 
-UserReg = reduxForm({
-  // a unique name for the form
-  form: 'registration'
-})(UserReg)
 
-export default UserReg;
+
+UserForm = reduxForm({
+  // a unique name for the form
+  form: 'userform'
+})(UserForm);
+
+export {UserForm};
