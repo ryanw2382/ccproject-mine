@@ -1,11 +1,11 @@
 import { createStore, combineReducers } from 'redux';
-import {routerReducer} from 'react-router-redux';
-import { reducer as formReducer } from 'redux-form';
+import { reducer as reduxFormReducer } from 'redux-form';
 
-const rootReducer = combineReducers({
- routing: routerReducer,
- form: formReducer
-})
+const reducer = combineReducers({
+  form: reduxFormReducer, // mounted under "form"
+});
+const store = (window.devToolsExtension
+  ? window.devToolsExtension()(createStore)
+  : createStore)(reducer);
 
-
-const store = createStore(rootReducer);
+export default store;
