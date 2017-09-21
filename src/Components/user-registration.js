@@ -1,21 +1,23 @@
 import React from 'react';
-import {connect} from 'react-redux';
-import { Field, reduxForm, formValueSelector} from 'redux-form';
+import { Field, reduxForm} from 'redux-form';
 import isEmail from 'sane-email-validation';
 import fire from '../fire'
 
 const validate = values => {
  const errors = {}
- if (!values.firstName){
-   errors.firstName = 'Required'
+ if (!values.userName){
+   errors.userName = 'Required'
  }
- if (!values.lastName){
-  errors.lastName = 'Required'
+ if (!values.password){
+  errors.password = 'Required'
+}
+if (values.password !== values.confirmPassword){
+  errors.password = "Passwords Must Match!"
 }
 if (!values.email){
   errors.email = 'Required'
 } else if (isEmail(values.email)){
-  errors.email = 'Invalid email address !'
+  errors.email = 'Invalid email address!'
 }
   return errors
 };
@@ -24,10 +26,26 @@ if (!values.email){
 
 let UserForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
-  const selector = formValueSelector('UserForm')
+  let userRegValuesRef = fire
+  .database
+  .ref("userReg")
+  .orderByKey();
+
+  userRegValuesRef.on("child_added");
+
+ addUser (e) {
+  e.preventDefault()
+   
+  fire
+        .database()
+        .ref("userReg")
+        .push(this.inputEl.value);
+        this.inputEl.value = ""; 
+  
+ }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit = {addUser}}>
     <div>
     <label>User</label>
     </div>
