@@ -27,7 +27,7 @@ let UserForm = props => {
   const selector = formValueSelector('UserForm')
 
   return (
-    <form onSubmit={ props.handleSubmit(doSubmit)}>
+    <form onSubmit={handleSubmit}>
     <div>
     <label>User</label>
     </div>
