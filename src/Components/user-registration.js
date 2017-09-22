@@ -1,7 +1,6 @@
 import React from 'react';
 import { Field, reduxForm} from 'redux-form';
 import isEmail from 'sane-email-validation';
-import fire from '../fire'
 
 const validate = values => {
  const errors = {}
@@ -26,26 +25,8 @@ if (!values.email){
 
 let UserForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
-  let userRegValuesRef = fire
-  .database
-  .ref("userReg")
-  .orderByKey();
-
-  userRegValuesRef.on("child_added");
-
- addUser (e) {
-  e.preventDefault()
-   
-  fire
-        .database()
-        .ref("userReg")
-        .push(this.inputEl.value);
-        this.inputEl.value = ""; 
-  
- }
-
   return (
-    <form onSubmit={handleSubmit = {addUser}}>
+    <form onSubmit={handleSubmit}>
     <div>
     <label>User</label>
     </div>
