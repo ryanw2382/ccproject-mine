@@ -26,8 +26,8 @@ if (!values.email){
 let UserForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props
   return (
-    <form onSubmit={handleSubmit}>
-    <div>
+    <form onSubmit={handleSubmit} className="w3-display-middle w3-container">
+    <div className="w3-container w3-teal">
     <label>User</label>
     </div>
     <div>
@@ -37,6 +37,7 @@ let UserForm = props => {
           component="input"
           type="radio"
           value="job-candidate"
+          className="w3-radio"
           />{' '}
           Job-Candidate
        </label>
@@ -46,31 +47,32 @@ let UserForm = props => {
           component="input"
           type="radio"
           value="employer"
+          className="w3-radio"
           />{' '}
           Employer
         </label>
       </div>
       <div>
         <label htmlFor="userName" placeholder="Username">Create User Name</label>
-        <Field name="userName" component="input" type="text" />
+        <Field name="userName" component="input" type="text" className="w3-input" />
       </div>
       <div>
         <label htmlFor="email" placeholder="E-mail">E-mail</label>
-        <Field name="email" component="input" type="text" />
+        <Field name="email" component="input" type="text" className="w3-input" />
       </div>
       <div>
         <label htmlFor="password" placeholder="password">Create Password</label>
-        <Field name="password" component="input" type="text" />
+        <Field name="password" component="input" type="text" className="w3-input" />
       </div>
       <div>
         <label htmlFor="confirmPassword" placeholder="password">Confirm Password</label>
-        <Field name="confirmPassword" component="input" type="text" />
+        <Field name="confirmPassword" component="input" type="text" className="w3-input" />
       </div>
     <div>
-    <button type="submit" disabled={pristine || submitting}>
+    <button type="submit" disabled={pristine || submitting} className="w3-btn">
       Submit
     </button>
-    <button type="button" disabled={pristine || submitting} onClick={reset}>
+    <button type="button" disabled={pristine || submitting} onClick={reset} className="w3-btn">
       Clear Values
     </button>
     </div>
@@ -86,4 +88,4 @@ UserForm = reduxForm({
   validate
 })(UserForm);
 
-export {UserForm};
+export default UserForm;
