@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {UserForm} from "./Components/user-registration";
+import showResults from "./Components/showResults"
 
 //The coded out code lines 7-51 was coded by drew for testing. -SDG
 
@@ -48,6 +49,8 @@ import {UserForm} from "./Components/user-registration";
 
 // export default App;
 
+
+
 export default class App extends Component {
  
   submit = (values) => {
@@ -55,7 +58,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <UserForm onSubmit={this.submit} />
+      <UserForm onSubmit={showResults} />
     );
   }
 }

@@ -24,7 +24,7 @@ if (!values.email){
 
 
 let UserForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
+  const {handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
     <div>
