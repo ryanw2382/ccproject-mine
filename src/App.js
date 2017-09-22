@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {UserForm} from "./Components/user-registration";
-import submitUser from "./services/user-reg-fireDB";
+
 
 //The coded out code lines 7-51 was coded by drew for testing. -SDG
 
@@ -58,7 +58,7 @@ export default class App extends Component {
   }
   render() {
     return (
-      <UserForm onSubmit={submitUser} />
+      <UserForm  />
     );
   }
 }

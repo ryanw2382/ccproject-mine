@@ -1,10 +1,11 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
+import submitUser from "../services/user-reg-fireDB";
 
 let UserForm = props => {
   const { handleSubmit, pristine, reset, submitting } = props;
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit(submitUser)}>
     <div>
     <label>User</label>
     <div>
