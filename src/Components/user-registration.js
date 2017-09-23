@@ -1,91 +1,86 @@
 import React from 'react';
-import { Field, reduxForm} from 'redux-form';
-import isEmail from 'sane-email-validation';
-
-const validate = values => {
- const errors = {}
- if (!values.userName){
-   errors.userName = 'Required'
- }
- if (!values.password){
-  errors.password = 'Required'
-}
-if (values.password !== values.confirmPassword){
-  errors.password = "Passwords Must Match!"
-}
-if (!values.email){
-  errors.email = 'Required'
-} else if (isEmail(values.email)){
-  errors.email = 'Invalid email address!'
-}
-  return errors
-};
-
-
+import { Field, reduxForm } from 'redux-form';
+import submitUser from "../services/user-reg-fireDB";
 
 let UserForm = props => {
-  const { handleSubmit, pristine, reset, submitting } = props
-  return (
-    <form onSubmit={handleSubmit} className="w3-display-middle w3-container">
-    <div className="w3-container w3-teal">
-    <label>User</label>
-    </div>
-    <div>
-      <label>
-        <Field
-          name="user"
-          component="input"
-          type="radio"
-          value="job-candidate"
-          className="w3-radio"
-          />{' '}
-          Job-Candidate
-       </label>
-       <label>
-        <Field
-          name="user"
-          component="input"
-          type="radio"
-          value="employer"
-          className="w3-radio"
-          />{' '}
-          Employer
-        </label>
-      </div>
-      <div>
-        <label htmlFor="userName" placeholder="Username">Create User Name</label>
-        <Field name="userName" component="input" type="text" className="w3-input" />
-      </div>
-      <div>
-        <label htmlFor="email" placeholder="E-mail">E-mail</label>
-        <Field name="email" component="input" type="text" className="w3-input" />
-      </div>
-      <div>
-        <label htmlFor="password" placeholder="password">Create Password</label>
-        <Field name="password" component="input" type="text" className="w3-input" />
-      </div>
-      <div>
-        <label htmlFor="confirmPassword" placeholder="password">Confirm Password</label>
-        <Field name="confirmPassword" component="input" type="text" className="w3-input" />
-      </div>
-    <div>
-    <button type="submit" disabled={pristine || submitting} className="w3-btn">
-      Submit
-    </button>
-    <button type="button" disabled={pristine || submitting} onClick={reset} className="w3-btn">
-      Clear Values
-    </button>
-    </div>
-    </form>
-  )
-}
-
-
+    const { handleSubmit, pristine, reset, submitting } = props;
+    return (
+        <div className="w3-display-container w3-gray w3-display-middle w3-card-4 w3-padding-large w3-margin">
+        <form onSubmit={handleSubmit(submitUser)} className="w3-margin">
+            <div className="">
+                <label>User</label>
+                <div className="w3-content">
+                    <label>
+                        <Field name="user" component="input" type="radio" value="Job-Candidate" className="w3-radio" />
+                        {' '}
+                        Job-Candidate
+                    </label>
+                    <label>
+                        <Field name="user" component="input" type="radio" value="employer" className="w3-radio" />
+                        {' '}
+                        Employer
+                    </label>
+                </div>
+            </div>
+            <div>
+                <label>Username</label>
+                <div>
+                    <Field
+                        name="userName"
+                        component="input"
+                        type="text"
+                        placeholder="User Name"
+                    />
+                </div>
+            </div>
+            <div>
+                <label>Email</label>
+                <div>
+                    <Field
+                        name="email"
+                        component="input"
+                        type="email"
+                        placeholder="Email"
+                    />
+                </div>
+            </div>
+            <div>
+                <label>Create Password</label>
+                <div>
+                    <Field
+                        name="createPassword"
+                        component="input"
+                        type="password"
+                        placeholder="Password"
+                    />
+                </div>
+            </div>
+            <div>
+                <label>Confirm Password</label>
+                <div>
+                    <Field
+                        name="confirmPassword"
+                        component="input"
+                        type="password"
+                        placeholder="Password"
+                    />
+                </div>
+            </div>
+            <div>{ {"user":"employer"}.checked && <span>Thank you, Jesus!</span> }</div>
+            <div>
+                <button type="submit" disabled={pristine || submitting}>Submit</button>
+                <button type="button" disabled={pristine || submitting} onClick={reset}>
+                    Clear Values
+                </button>
+            </div>
+        </form>
+        </div>
+    );
+};
 
 UserForm = reduxForm({
-  // a unique name for the form
-  form: 'userform',
-  validate
+    // a unique name for the form
+    form: 'userform',
 })(UserForm);
 
-export default UserForm;
+export {UserForm};
