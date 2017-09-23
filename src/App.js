@@ -3,8 +3,8 @@ import { BrowserRouter as Router, Route, NavLink } from "react-router-dom";
 import "./App.css";
 import { Navbar, Nav } from 'reactstrap';
 import {UserForm} from "./Components/user-registration";
+import Login from "./Components/Login"
 
-const Login = () => <h1>Login</h1>;
 
 const Links = () => (
     <div>
