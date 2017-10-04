@@ -11,7 +11,7 @@ import {
     isEmpty
 } from 'react-redux-firebase'
 import { LIST_PATH } from './../../../constants'
-import LoadingSpinner from './../../../components/LoadingSpinner'
+import LoadingSpinner from '../../../Components/LoadingSpinner'
 import ProjectTile from '../components/ProjectTile'
 import NewProjectTile from '../components/NewProjectTile'
 import NewProjectDialog from '../components/NewProjectDialog'
