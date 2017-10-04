@@ -1,22 +1,33 @@
 import React from 'react';
-import {Parallax} from 'react-materialize';
-import HomeDevs from './Home-Devs';
+// import {Parallax} from 'react-materialize';
+// import HomeDevs from './Home-Devs';
+import Paper from 'material-ui/Paper';
 import meet from '../../assets/meet.jpg';
 // import { BrowserRouter as NavLink } from "react-router-dom";
 
+const style = {
+	height: 170,
+	width: 170,
+	margin: 22,
+	textAlign: 'center',
+	display: 'inline-block',
+	offset: 1,
+	
+  };
+  
+
 export const HomePara = (props) => {
   return (
-    <div position="relative">
-	<Parallax imageSrc={meet}/>
-	<div className="section white">
-		<div className="row container">
-            <h2 className="header">Parallax</h2>
-            <p className="grey-text text-darken-3 lighten-3">Parallax is an effect where the background content or image in this case, is moved at a different speed than the foreground content while scrolling.</p>
-            <HomeDevs/>
-		</div>
+	<div  >
+	<div class="col s5 pull-s7">
+    <Paper style={style} zDepth={5} circle={true} />
+    <Paper style={style} zDepth={5} circle={true}/>
+    <Paper style={style} zDepth={5} circle={true}/>
+    <Paper style={style} zDepth={5} circle={true}/>
+	<Paper style={style} zDepth={5} circle={true}/>
 	</div>
-	<Parallax imageSrc="http://materializecss.com/images/parallax2.jpg"/>
-</div>
+  </div>
+
 )};
 
 export default HomePara;
