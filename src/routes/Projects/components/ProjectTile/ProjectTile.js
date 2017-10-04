@@ -17,8 +17,14 @@ export const ProjectTile = ({ project, onSelect, onDelete, showDelete }) => (
           <b>Salary: </b>
           {project.salary}
         </div>
-        <div className={classes.flexItem}>{project.preferredSkills}</div>
-        <div className={classes.flexItem}>{project.devSelect}</div>
+        <div className={classes.flexItem}>
+          <b>Preferred Skills: </b>
+          {project.preferredSkills}
+        </div>
+        <div className={classes.flexItem}>
+          <b>Dev Selected</b>
+          {project.devSelect}
+        </div>
       </div>
 
       {showDelete && onDelete ? (
