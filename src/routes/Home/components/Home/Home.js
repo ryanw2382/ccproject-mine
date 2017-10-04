@@ -3,6 +3,7 @@ import Theme from '../../../../theme';
 import HomeMain from './Home-Main';
 import HomeFooter from "./Home-Footer";
 import HomePara from "./Home-Parallax"
+import HomeDevs from "./Home-Devs";
 // import { Link } from 'react-router';
 // import { paths } from '../../../../constants';
 // import classes from './Home.scss';
@@ -12,6 +13,7 @@ export const Home = () => {
   return (
   <div>
     <HomeMain />
+    <HomeDevs/>
     <HomePara />
     <HomeFooter />
   </div>
