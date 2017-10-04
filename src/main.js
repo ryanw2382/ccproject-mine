@@ -5,7 +5,6 @@ import { version } from '../package.json';
 import { env } from './config';
 import './styles/core.scss';
 
-
 // Window Variables
 // ------------------------------------
 window.version = version;
@@ -25,10 +24,8 @@ const MOUNT_NODE = document.getElementById('root');
 let render = () => {
     const App = require('./containers/App').default;
     const routes = require('./routes/index').default(store);
-    ReactDOM.render(
-        <App store={store} routes={routes} />,
-        MOUNT_NODE
-    )
+
+    ReactDOM.render(<App store={store} routes={routes} />, MOUNT_NODE)
 };
 
 // Development Tools
@@ -36,7 +33,7 @@ let render = () => {
 if (__DEV__) {
     if (module.hot) {
         const renderApp = render;
-        const renderError = (error) => {
+        const renderError = error => {
             const RedBox = require('redbox-react').default;
 
             ReactDOM.render(<RedBox error={error} />, MOUNT_NODE)

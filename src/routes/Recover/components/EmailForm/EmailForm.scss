@@ -1,0 +1,9 @@
+@import '../../../../styles/base';
+
+.container {
+  @extend .flex-column-center;
+  padding: 3rem;
+}
+.submit {
+  margin-top: 2rem;
+}

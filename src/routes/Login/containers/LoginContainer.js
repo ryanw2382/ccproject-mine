@@ -54,7 +54,7 @@ export default class Login extends Component {
                 <div className={classes.providers}>
                     <span>
                     <GoogleButton onClick={() => this.providerLogin('google')} />
-                    <button className="facebook" onClick={() => this.providerLogin('facebook')}>Log In With Facebook</button>
+                        <a className="facebook waves-effect waves-light btn-large social" onClick={() => this.providerLogin('facebook')}><i className="fa fa-facebook" />Log In With Facebook</a>
                     <button className="github" onClick={() => this.providerLogin('github')}>Log In With GitHub</button>
                     </span>
                 </div>
