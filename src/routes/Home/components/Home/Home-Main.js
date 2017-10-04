@@ -8,7 +8,7 @@ import hero from "../../assets/bg-home-technologies.jpg";
 
 export const HomeMain = (props) => {
   return (
-    <Slider>
+    <Slider indicators={false}>
 	 <Slide
 		src={comp_coff}
         title="In Need of a Web Developer ?">
