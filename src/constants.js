@@ -6,8 +6,7 @@ export const SIGNUP_PATH = '/signup'
 export const EMPLOYERS_PATH = 'employers'
 export const JOB_DETAIL_PATH = ':jobdetail'
 
-export const ACCOUNT_FORM_NAME = 
-'account'
+export const ACCOUNT_FORM_NAME = 'account'
 export const LOGIN_FORM_NAME = 'login'
 export const SIGNUP_FORM_NAME = 'signup'
 export const NEW_PROJECT_FORM_NAME = 'newProject'
