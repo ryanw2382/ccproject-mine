@@ -1,7 +1,7 @@
-import { LIST_PATH as path } from './../../constants'
+import { RECOVER_PATH as path } from 'constants'
 
 export default store => ({
-    path,
+    path: path,
     /*  Async getComponent is only invoked when route matches   */
     getComponent(nextState, cb) {
         /*  Webpack - use 'require.ensure' to create a split point
@@ -11,24 +11,14 @@ export default store => ({
             require => {
                 /*  Webpack - use require callback to define
                   dependencies for bundling   */
-                const Projects = require('./containers/ProjectsContainer').default;
+                const Recover = require('./containers/RecoverContainer').default;
 
                 /*  Return getComponent   */
-                cb(null, Projects)
+                cb(null, Recover)
 
                 /* Webpack named bundle   */
             },
-            'Projects'
+            'Recover'
         )
-    },
-    getChildRoutes(partialNextState, cb) {
-        require.ensure([], require => {
-            /*  Webpack - use require callback to define
-                dependencies for bundling   */
-            const Project = require('./routes/Project').default;
-
-            /*  Return getComponent   */
-            cb(null, [Project(store)])
-        })
     }
 })
