@@ -4,6 +4,7 @@ import { Link } from 'react-router';
 import GoogleButton from 'react-google-button';
 import Paper from 'material-ui/Paper';
 import Snackbar from 'material-ui/Snackbar';
+import RaisedButton from 'material-ui/RaisedButton'
 import { connect } from 'react-redux';
 import {
     firebaseConnect,
@@ -11,10 +12,12 @@ import {
     isEmpty,
     pathToJS
 } from 'react-redux-firebase';
+
 import { UserIsNotAuthenticated } from '../../../utils/router';
 import { LIST_PATH, LOGIN_PATH } from '../../../constants';
 import SignupForm from '../components/SignupForm';
 import classes from './SignupContainer.scss';
+
 @UserIsNotAuthenticated // redirect to list page if logged in
 @firebaseConnect()
 @connect(({ firebase }) => ({
@@ -91,11 +94,27 @@ export default class Signup extends Component {
                     or
                 </div>
                 <div className={classes.providers}>
-                    <span>
-                    <GoogleButton onClick={() => this.providerLogin('google')} />
-                    <button className="facebook" onClick={() => this.providerLogin('facebook')}>Log In With Facebook</button>
-                    <button className="github" onClick={() => this.providerLogin('github')}>Log In With GitHub</button>
-                    </span>
+                    <div className="center-align">
+                        <div>
+                            <ul>
+                                <li><GoogleButton onClick={() => this.providerLogin('google')} /></li>
+                                <li><RaisedButton onClick={() => this.providerLogin('facebook')}>
+                                    <a className="waves-effect waves-light btn-large social facebook">
+                                        <i className="fa fa-facebook" />
+                                        Log In With Facebook
+                                    </a>
+                                </RaisedButton>
+                                </li>
+                                <li><RaisedButton onClick={() => this.providerLogin('github')}>
+                                    <a className="waves-effect waves-light btn-large social github">
+                                        <i className="fa fa-github" />
+                                        Sign in with github
+                                    </a>
+                                </RaisedButton>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div className={classes.login}>
           <span className={classes.loginLabel}>

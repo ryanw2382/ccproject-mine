@@ -4,16 +4,17 @@ import { LIST_PATH } from '../constants';
 import { pathToJS } from 'react-redux-firebase';
 import LoadingSpinner from '../Components/LoadingSpinner';
 
-
 const AUTHED_REDIRECT = 'AUTHED_REDIRECT';
 const UNAUTHED_REDIRECT = 'UNAUTHED_REDIRECT';
+
 /**
  * @description Higher Order Component that redirects to `/login` instead
  * rendering if user is not authenticated (default of redux-auth-wrapper).
  * @param {Component} componentToWrap - Component to wrap
  * @return {Component} wrappedComponent
  */
-export const UserIsAuthenticated = UserAuthWrapper({ // eslint-disable-line new-cap
+
+export const UserIsAuthenticated = UserAuthWrapper({
     wrapperDisplayName: 'UserIsAuthenticated',
     LoadingComponent: LoadingSpinner,
     authSelector: ({ firebase }) => pathToJS(firebase, 'auth'),
@@ -21,7 +22,7 @@ export const UserIsAuthenticated = UserAuthWrapper({ // eslint-disable-line new-
         (pathToJS(firebase, 'auth') === undefined) ||
         (pathToJS(firebase, 'isInitializing') === true),
     predicate: auth => auth !== null,
-    redirectAction: newLoc => (dispatch) => {
+    redirectAction: newLoc => dispatch => {
         browserHistory.replace(newLoc);
         dispatch({
             type: UNAUTHED_REDIRECT,
@@ -29,6 +30,7 @@ export const UserIsAuthenticated = UserAuthWrapper({ // eslint-disable-line new-
         })
     }
 });
+
 /**
  * @description Higher Order Component that redirects to listings page or most
  * recent route instead rendering if user is not authenticated. This is useful

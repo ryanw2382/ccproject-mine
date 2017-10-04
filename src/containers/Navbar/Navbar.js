@@ -89,7 +89,7 @@ export default class Navbar extends Component {
                     />
                 </Link>
             </div>
-        )
+        );
         const rightMenu = authExists ? (
             <IconMenu
                 iconButtonElement={iconButton}
