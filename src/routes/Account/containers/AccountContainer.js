@@ -40,6 +40,7 @@ export default class Account extends Component {
 
     return (
         <div className={classes.container}>
+
           <Paper className={classes.pane}>
             <div className={classes.settings}>
               <div className={classes.avatar}>
@@ -63,6 +64,7 @@ export default class Account extends Component {
               </div>
             </div>
           </Paper>
+
         </div>
     )
   }
