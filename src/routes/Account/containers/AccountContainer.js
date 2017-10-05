@@ -40,29 +40,29 @@ export default class Account extends Component {
 
     return (
         <div className={classes.container}>
-            <Paper className={classes.pane}>
-                <div className={classes.settings}>
-                    <div className={classes.avatar}>
-                        <img
-                            className={classes.avatarCurrent}
-                            src={
-                              account && account.avatarUrl ? (
-                                  account.avatarUrl
-                              ) : (
-                                  defaultUserImageUrl
-                              )
-                            }
-                            onClick={this.toggleModal}
-                        />
-                    </div>
-                    <div className={classes.meta}>
-                        <AccountForm
-                            onSubmit={this.updateAccount}
-                            initialValues={account}
-                        />
-                    </div>
-                </div>
-            </Paper>
+          <Paper className={classes.pane}>
+            <div className={classes.settings}>
+              <div className={classes.avatar}>
+                <img
+                    className={classes.avatarCurrent}
+                    src={
+                      account && account.avatarUrl ? (
+                          account.avatarUrl
+                      ) : (
+                          defaultUserImageUrl
+                      )
+                    }
+                    onClick={this.toggleModal}
+                />
+              </div>
+              <div className={classes.meta}>
+                <AccountForm
+                    onSubmit={this.updateAccount}
+                    initialValues={account}
+                />
+              </div>
+            </div>
+          </Paper>
         </div>
     )
   }
