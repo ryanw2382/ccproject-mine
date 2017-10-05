@@ -4,22 +4,27 @@ import LoginRoute from './Login';
 import SignupRoute from './Signup';
 import ProjectsRoute from './Projects';
 import AccountRoute from './Account';
+import RecoverRoute from './Recover';
 import NotFoundRoute from './NotFound';
+
 /*  Note: Instead of using JSX, we recommend using react-router
     PlainRoute objects to build route definitions.   */
-export const createRoutes = (store) => ({
+
+export const createRoutes = store => ({
     path: '/',
     component: CoreLayout,
     indexRoute: Home,
     childRoutes: [
-        AccountRoute(store),
-        LoginRoute(store),
-        SignupRoute(store),
+        AccountRoute,
+        LoginRoute,
+        SignupRoute,
         ProjectsRoute(store),
+        RecoverRoute(store),
         /* Place all Routes above here so NotFoundRoute can act as a 404 page */
         NotFoundRoute(store)
     ]
 });
+
 /*  Note: childRoutes can be chunked or otherwise loaded programmatically
     using getChildRoutes with the following signature:
     getChildRoutes (location, cb) {
