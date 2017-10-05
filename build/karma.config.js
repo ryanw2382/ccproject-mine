@@ -19,8 +19,8 @@ const karmaConfig = {
   singleRun: !argv.watch,
   coverageIstanbulReporter: {
     reports: argv.watch
-      ? ['text-summary']
-      : ['html', 'lcovonly', 'text-summary'],
+        ? ['text-summary']
+        : ['html', 'lcovonly', 'text-summary'],
     dir: 'coverage',
     fixWebpackSourcePaths: true,
     skipFilesWithNoCoverage: false

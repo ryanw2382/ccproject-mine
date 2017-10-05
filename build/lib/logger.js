@@ -4,9 +4,9 @@ const figures = require('figures')
 
 // Need to support Node versions that don't support spreading function arguments
 const spread = fn =>
-  function() {
-    return fn([].slice.call(arguments))
-  }
+    function() {
+      return fn([].slice.call(arguments))
+    }
 
 exports.log = console.log.bind(console)
 

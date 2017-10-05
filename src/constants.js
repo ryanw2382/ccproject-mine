@@ -4,6 +4,7 @@ export const ACCOUNT_PATH = '/account';
 export const LOGIN_PATH = '/login';
 export const SIGNUP_PATH = '/signup';
 export const DEVELOPERS_PATH = '/developers';
+export const RECOVER_PATH = '/recover';
 export const PROFILE_PATH = '/profile';
 
 export const ACCOUNT_FORM_NAME = 'account';
@@ -29,6 +30,7 @@ export const paths = {
     login: LOGIN_PATH,
     signup: SIGNUP_PATH,
     developers: DEVELOPERS_PATH,
+    recover: RECOVER_PATH,
     profile: PROFILE_PATH
 };
 export default { ...paths, ...formNames };

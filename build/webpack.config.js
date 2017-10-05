@@ -33,15 +33,15 @@ const config = {
   },
   plugins: [
     new webpack.DefinePlugin(
-      Object.assign(
-        {
-          'process.env': { NODE_ENV: JSON.stringify(project.env) },
-          __DEV__,
-          __TEST__,
-          __PROD__
-        },
-        project.globals
-      )
+        Object.assign(
+            {
+              'process.env': { NODE_ENV: JSON.stringify(project.env) },
+              __DEV__,
+              __TEST__,
+              __PROD__
+            },
+            project.globals
+        )
     )
   ],
   node: {
@@ -188,25 +188,25 @@ config.module.rules.push({
 // HTML Template
 // ------------------------------------
 config.plugins.push(
-  new HtmlWebpackPlugin({
-    template: inProjectSrc('index.html'),
-    inject: true,
-    minify: {
-      collapseWhitespace: true
-    }
-  })
+    new HtmlWebpackPlugin({
+      template: inProjectSrc('index.html'),
+      inject: true,
+      minify: {
+        collapseWhitespace: true
+      }
+    })
 )
 
 // Development Tools
 // ------------------------------------
 if (__DEV__) {
   config.entry.main.push(
-    `webpack-hot-middleware/client.js?path=${config.output
-      .publicPath}__webpack_hmr`
+      `webpack-hot-middleware/client.js?path=${config.output
+          .publicPath}__webpack_hmr`
   )
   config.plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NamedModulesPlugin()
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NamedModulesPlugin()
   )
 }
 
@@ -220,7 +220,7 @@ if (!__TEST__) {
     config.entry.vendor = project.vendors
   }
   config.plugins.push(
-    new webpack.optimize.CommonsChunkPlugin({ names: bundles })
+      new webpack.optimize.CommonsChunkPlugin({ names: bundles })
   )
 }
 
@@ -228,39 +228,39 @@ if (!__TEST__) {
 // ------------------------------------
 if (__PROD__) {
   config.plugins.push(
-    new webpack.LoaderOptionsPlugin({
-      minimize: true,
-      debug: false
-    }),
-    new webpack.optimize.UglifyJsPlugin({
-      sourceMap: !!config.devtool,
-      comments: false,
-      compress: {
-        warnings: false,
-        screw_ie8: true,
-        conditionals: true,
-        unused: true,
-        comparisons: true,
-        sequences: true,
-        dead_code: true,
-        evaluate: true,
-        if_return: true,
-        join_vars: true
-      }
-    }),
-    new FaviconsWebpackPlugin({
-      logo: 'static/logo.svg',
-      inject: true,
-      title: 'material',
-      persistentCache: true,
-      icons: {
-        favicons: true,
-        appleIcon: true,
-        appleStartup: true,
-        firefox: true,
-        android: true
-      }
-    })
+      new webpack.LoaderOptionsPlugin({
+        minimize: true,
+        debug: false
+      }),
+      new webpack.optimize.UglifyJsPlugin({
+        sourceMap: !!config.devtool,
+        comments: false,
+        compress: {
+          warnings: false,
+          screw_ie8: true,
+          conditionals: true,
+          unused: true,
+          comparisons: true,
+          sequences: true,
+          dead_code: true,
+          evaluate: true,
+          if_return: true,
+          join_vars: true
+        }
+      }),
+      new FaviconsWebpackPlugin({
+        logo: 'static/logo.svg',
+        inject: true,
+        title: 'material',
+        persistentCache: true,
+        icons: {
+          favicons: true,
+          appleIcon: true,
+          appleStartup: true,
+          firefox: true,
+          android: true
+        }
+      })
   )
 }
 
