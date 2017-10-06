@@ -1,9 +1,9 @@
 import React from 'react'
-import './ProfileView.scss'
+import classes from './ProfileView.scss'
 
 
 
 export const ProfileView = () => (
-    <div></div>
+    <div className={classes.container} ></div>
 )
 
