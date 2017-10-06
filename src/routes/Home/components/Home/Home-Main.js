@@ -4,10 +4,13 @@ import comp_coff from "../../../../img/comp_coff.jpg";
 import tech from "../../assets/tech.png";
 import hero from "../../assets/bg-home-technologies.jpg";
 
+
 // import { BrowserRouter as NavLink } from "react-router-dom";
 
 export const HomeMain = (props) => {
   return (
+	  <div>
+	  <div>
     <Slider indicators={false}>
 	 <Slide
 		src={comp_coff}
@@ -27,6 +30,8 @@ export const HomeMain = (props) => {
 		A great addition to any team.
 	</Slide>
 </Slider>
+</div>
+</div>
 )};
 
 export default HomeMain;

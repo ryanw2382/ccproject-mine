@@ -1,5 +1,5 @@
 import React from 'react';
-// import {Parallax} from 'react-materialize';
+// import { Parallax } from 'react-parallax';
 // import HomeDevs from './Home-Devs';
 import Paper from 'material-ui/Paper';
 import meet from '../../assets/meet.jpg';
@@ -13,20 +13,22 @@ const style = {
 	display: 'inline-block',
 	offset: 1,
 	
-  };
-  
+	};
+	const pic = {borderRadius: 85}
+
+	 var dev = (<img style={pic} width={170} height={170} src={meet} />);
 
 export const HomePara = (props) => {
   return (
 	<div  >
 	<div class="col s5 pull-s7">
-    <Paper style={style} zDepth={5} circle={true} />
-    <Paper style={style} zDepth={5} circle={true}/>
-    <Paper style={style} zDepth={5} circle={true}/>
-    <Paper style={style} zDepth={5} circle={true}/>
-	<Paper style={style} zDepth={5} circle={true}/>
+    <Paper style={style} zDepth={5} circle={true} children={dev}/>
+    <Paper style={style} zDepth={5} circle={true} children={dev}/>
+    <Paper style={style} zDepth={5} circle={true} children={dev}/>
+    <Paper style={style} zDepth={5} circle={true} children={dev}/>
+	  <Paper style={style} zDepth={5} circle={true} children={dev}/>
 	</div>
-  </div>
+	</div>
 
 )};
 
