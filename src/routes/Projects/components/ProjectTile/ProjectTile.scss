@@ -1,13 +1,13 @@
-@import '../../../../styles/base';
+@import "base";
 
 .container {
   @extend .flex-column;
   justify-content: flex-start;
   align-items: flex-start;
-  height: 200px;
-  margin: .5rem;
+  height: 300px;
+  margin: 0.5rem;
   padding: 1.3rem;
-  width: 300px;
+  width: 400px;
 }
 .top {
   @extend .flex-row;
@@ -15,13 +15,13 @@
   align-items: flex-start;
   width: 100%;
 }
-.name {
+.jobName {
   font-size: 1.5rem;
   font-weight: 300;
   text-decoration: none;
   color: $darkGray;
   cursor: pointer;
-  transition: all 800ms cubic-bezier(0.25,0.1,0.25,1) 0ms;
+  transition: all 800ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
@@ -38,7 +38,7 @@
   align-items: flex-start;
   align-self: flex-end;
   cursor: pointer;
-  transition: all 800ms cubic-bezier(0.25,0.1,0.25,1) 0ms;
+  transition: all 800ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
   &:hover {
     color: $accentColor;
   }
@@ -47,10 +47,7 @@
   font-size: 1.2rem;
   color: $darkGray;
   cursor: pointer;
-  transition: all 800ms cubic-bezier(0.25,0.1,0.25,1) 0ms;
-  &:hover {
-    color: $accentColor;
-  }
+  transition: all 800ms cubic-bezier(0.25, 0.1, 0.25, 1) 0ms;
 }
 .collaborators {
   @extend .flex-row;
@@ -61,8 +58,8 @@
 }
 .collaborator {
   @extend .flex-row;
-  margin-left: .4rem;
-  margin-right: .4rem;
+  margin-left: 0.4rem;
+  margin-right: 0.4rem;
   overflow: hidden;
   cursor: pointer;
   -webkit-filter: grayscale(1);
@@ -79,4 +76,11 @@
   &:hover {
     color: $accentColor;
   }
+}
+
+.flexItem {
+  @extend .flex-row;
+  width: 100px;
+  height: 40px;
+  margin: 10px;
 }
