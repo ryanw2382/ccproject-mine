@@ -1,6 +1,6 @@
 {
-  "name": "ccproject",
-  "version": "0.1.1",
+  "name": "get-me-a-job",
+  "version": "0.0.2",
   "private": true,
   "description": "Get Me A Job is our Group CoderCamp final Project",
   "main": "index.js",
