@@ -2,12 +2,12 @@ export const env = 'development';
 
 // config for firebase
 export const firebase = {
-    apiKey: "AIzaSyDqTkyVSjLcobTGlnOVawr7uFf-em7-Opc",
-    authDomain: "groupproject-6b847.firebaseapp.com",
-    databaseURL: "https://groupproject-6b847.firebaseio.com",
-    projectId: "groupproject-6b847",
-    storageBucket: "groupproject-6b847.appspot.com",
-    messagingSenderId: "773890413081"
+  apiKey: "AIzaSyDwfJvZ9Kga4SWDKHZraAabNWMGASyWEVY",
+  authDomain: "get-me-a-job-cf02b.firebaseapp.com",
+  databaseURL: "https://get-me-a-job-cf02b.firebaseio.com",
+  projectId: "get-me-a-job-cf02b",
+  storageBucket: "get-me-a-job-cf02b.appspot.com",
+  messagingSenderId: "956943026553",
 };
 
 // config for react-redux-firebase
